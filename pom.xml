@@ -9,12 +9,17 @@
   <version>2.18.1-SNAPSHOT</version>
 
   <name>Camel Mixpanel Component</name>
-  <url>http://www.myorganization.org</url>
+  <url>http://khipu.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
+
+  <scm>
+    <developerConnection>scm:git:git@github.com:khipu/camel-mixpanel.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
 
   <dependencies>
     <dependency>
