@@ -6,7 +6,7 @@
   <groupId>com.khipu.camel</groupId>
   <artifactId>camel-mixpanel</artifactId>
   <packaging>bundle</packaging>
-  <version>2.18.1-SNAPSHOT</version>
+  <version>2.18.1</version>
 
   <name>Camel Mixpanel Component</name>
   <url>http://khipu.com</url>
