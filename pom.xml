@@ -17,7 +17,7 @@
   </properties>
 
   <scm>
-    <developerConnection>scm:git:git@github.com:khipu/camel-mixpanel.git</developerConnection>
+    <developerConnection>scm:git:git@github-camel-mixpanel:khipu/camel-mixpanel.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
