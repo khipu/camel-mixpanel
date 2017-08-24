@@ -12,40 +12,55 @@ import org.apache.camel.spi.UriPath;
 /**
  * Represents a Mixpanel endpoint.
  */
-@UriEndpoint(scheme = "mixpanel", title = "Mixpanel", syntax="mixpanel:token", producerOnly = true, label = "Mixpanel")
+@UriEndpoint(scheme = "mixpanel", title = "Mixpanel", syntax = "mixpanel:token|api_key", producerOnly = true, label = "Mixpanel")
 public class MixpanelEndpoint extends DefaultEndpoint {
-    @UriPath @Metadata(required = "true")
-    private String token;
+	@UriPath
+	@Metadata(required = "true")
+	private String token;
 
-    public MixpanelEndpoint() {
-    }
+	@Metadata(required = "true")
+	private String apiKey;
 
-    public MixpanelEndpoint(String uri, MixpanelComponent component) {
-        super(uri, component);
+	public MixpanelEndpoint() {
+	}
 
-    }
+	public MixpanelEndpoint(String uri, MixpanelComponent component) {
+		super(uri, component);
 
-    public Producer createProducer() throws Exception {
-        return new MixpanelProducer(this, new MixpanelClient(token));
-    }
+	}
 
-    public Consumer createConsumer(Processor processor) throws Exception {
-        throw new UnsupportedOperationException("Cannot consume from an MixpanelEndpoint: " + getEndpointUri());
-    }
+	public Producer createProducer() throws Exception {
+		return new MixpanelProducer(this, new MixpanelClient(token, apiKey));
+	}
 
-    public boolean isSingleton() {
-        return true;
-    }
+	public Consumer createConsumer(Processor processor) throws Exception {
+		throw new UnsupportedOperationException("Cannot consume from an MixpanelEndpoint: " + getEndpointUri());
+	}
 
-    /**
-     * your project token in Mixpanel
-     */
-    public void setToken(String token) {
-        this.token = token;
-    }
+	public boolean isSingleton() {
+		return true;
+	}
 
-    public String getToken() {
-        return token;
-    }
+	/**
+	 * your project TOKEN in Mixpanel
+	 */
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	/**
+	 * your project API_KEY in Mixpanel
+	 */
+	public void setApiKey(String apiKey) {
+		this.apiKey = apiKey;
+	}
+
+	public String getApiKey() {
+		return apiKey;
+	}
 
 }
